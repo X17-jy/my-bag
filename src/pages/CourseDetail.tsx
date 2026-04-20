@@ -8,95 +8,172 @@ const CourseDetail = () => {
   const [lessons, setLessons] = useState<any[]>([]);
 
   useEffect(() => {
-    // 模拟课程数据
-    setCourse({
-      id: 1,
-      title: 'Python基础编程',
-      description: '掌握Python编程语言的基本语法和数据结构，为数据分析打下坚实的基础。本课程适合商务数据分析专业的学生，通过实际案例和练习，帮助学生快速掌握Python编程技能。',
-      category: '基础',
-      difficulty: '初级',
-      duration: '4周',
-      instructor: '张老师',
-      rating: 4.8,
-      students: 1200,
-      image_url: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Python%20programming%20basics%20course%20thumbnail&image_size=landscape_16_9',
-      prerequisites: ['基本计算机操作能力', '了解基本数学概念'],
-      learning_objectives: [
-        '掌握Python基本语法和数据类型',
-        '学习函数和模块的使用',
-        '掌握文件操作和异常处理',
-        '了解面向对象编程基础',
-        '能够编写简单的数据分析脚本'
-      ]
-    });
-
-    // 模拟课程大纲
-    setLessons([
-      {
+    // 根据课程ID获取课程数据
+    if (id === '1') {
+      // Python数据分析AI训练平台课程
+      setCourse({
         id: 1,
-        title: 'Python简介与环境搭建',
-        content: '介绍Python的历史、特点和应用领域，以及如何搭建Python开发环境。',
-        video_url: 'https://example.com/video1',
-        duration: '45分钟',
-        exercises: 3
-      },
-      {
+        title: 'Python数据分析AI训练平台',
+        description: '基于Cloudflare免费资源，实现3步认知+10个梯度项目+AI错题倒逼的Python数据分析实操训练平台，零成本、零运维、无传统后端，打开浏览器即可使用。',
+        category: '高级',
+        difficulty: '中级',
+        duration: '8周',
+        instructor: 'AI教练',
+        rating: 4.9,
+        students: 800,
+        image_url: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Python%20data%20analysis%20AI%20training%20platform&image_size=landscape_16_9',
+        prerequisites: ['Python基础编程知识', '基本数据分析概念'],
+        learning_objectives: [
+          '掌握3步认知法：思维模型、行业争议、辨析题',
+          '完成10个梯度项目的实操训练',
+          '学会使用AI陪练进行代码纠错和思路点拨',
+          '在浏览器端运行Python代码，无需后端环境',
+          '掌握数据分析的核心思维和方法'
+        ]
+      });
+
+      // 课程大纲
+      setLessons([
+        {
+          id: 1,
+          title: '第一天：底层认知模块',
+          content: '思维模型、行业争议、辨析题，建立数据分析的底层认知。',
+          video_url: 'https://example.com/video1',
+          duration: '90分钟',
+          exercises: 5
+        },
+        {
+          id: 2,
+          title: '项目1-3：过渡项目',
+          content: '完成3个基础过渡项目，熟悉平台操作和Python基础。',
+          video_url: 'https://example.com/video2',
+          duration: '120分钟',
+          exercises: 10
+        },
+        {
+          id: 3,
+          title: '项目4-7：进阶项目',
+          content: '完成4个进阶项目，掌握数据清洗、分析和可视化技能。',
+          video_url: 'https://example.com/video3',
+          duration: '180分钟',
+          exercises: 15
+        },
+        {
+          id: 4,
+          title: '项目8-10：高级项目',
+          content: '完成3个高级项目，应用机器学习和深度学习技术。',
+          video_url: 'https://example.com/video4',
+          duration: '210分钟',
+          exercises: 20
+        },
+        {
+          id: 5,
+          title: 'AI陪练系统',
+          content: '学习如何使用AI陪练进行代码纠错和思路点拨。',
+          video_url: 'https://example.com/video5',
+          duration: '60分钟',
+          exercises: 5
+        },
+        {
+          id: 6,
+          title: '综合项目实战',
+          content: '完成一个综合性的数据分析项目，应用所学技能。',
+          video_url: 'https://example.com/video6',
+          duration: '150分钟',
+          exercises: 1
+        }
+      ]);
+    } else {
+      // 默认课程：Python基础编程
+      setCourse({
         id: 2,
-        title: '基本语法与数据类型',
-        content: '学习Python的基本语法、变量、数据类型和运算符。',
-        video_url: 'https://example.com/video2',
-        duration: '60分钟',
-        exercises: 5
-      },
-      {
-        id: 3,
-        title: '控制流与循环',
-        content: '学习条件语句、循环结构和异常处理。',
-        video_url: 'https://example.com/video3',
-        duration: '50分钟',
-        exercises: 4
-      },
-      {
-        id: 4,
-        title: '函数与模块',
-        content: '学习函数的定义和使用，以及模块的导入和使用。',
-        video_url: 'https://example.com/video4',
-        duration: '55分钟',
-        exercises: 4
-      },
-      {
-        id: 5,
-        title: '文件操作与数据处理',
-        content: '学习如何读写文件，以及处理常见的数据格式。',
-        video_url: 'https://example.com/video5',
-        duration: '60分钟',
-        exercises: 5
-      },
-      {
-        id: 6,
-        title: '面向对象编程基础',
-        content: '学习类、对象、继承等面向对象编程概念。',
-        video_url: 'https://example.com/video6',
-        duration: '50分钟',
-        exercises: 3
-      },
-      {
-        id: 7,
-        title: '数据分析入门',
-        content: '介绍如何使用Python进行简单的数据分析。',
-        video_url: 'https://example.com/video7',
-        duration: '65分钟',
-        exercises: 4
-      },
-      {
-        id: 8,
-        title: '课程总结与项目实践',
-        content: '总结课程内容，完成一个综合性的数据分析项目。',
-        video_url: 'https://example.com/video8',
-        duration: '70分钟',
-        exercises: 1
-      }
-    ]);
+        title: 'Python基础编程',
+        description: '掌握Python编程语言的基本语法和数据结构，为数据分析打下坚实的基础。本课程适合商务数据分析专业的学生，通过实际案例和练习，帮助学生快速掌握Python编程技能。',
+        category: '基础',
+        difficulty: '初级',
+        duration: '4周',
+        instructor: '张老师',
+        rating: 4.8,
+        students: 1200,
+        image_url: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Python%20programming%20basics%20course%20thumbnail&image_size=landscape_16_9',
+        prerequisites: ['基本计算机操作能力', '了解基本数学概念'],
+        learning_objectives: [
+          '掌握Python基本语法和数据类型',
+          '学习函数和模块的使用',
+          '掌握文件操作和异常处理',
+          '了解面向对象编程基础',
+          '能够编写简单的数据分析脚本'
+        ]
+      });
+
+      // 课程大纲
+      setLessons([
+        {
+          id: 1,
+          title: 'Python简介与环境搭建',
+          content: '介绍Python的历史、特点和应用领域，以及如何搭建Python开发环境。',
+          video_url: 'https://example.com/video1',
+          duration: '45分钟',
+          exercises: 3
+        },
+        {
+          id: 2,
+          title: '基本语法与数据类型',
+          content: '学习Python的基本语法、变量、数据类型和运算符。',
+          video_url: 'https://example.com/video2',
+          duration: '60分钟',
+          exercises: 5
+        },
+        {
+          id: 3,
+          title: '控制流与循环',
+          content: '学习条件语句、循环结构和异常处理。',
+          video_url: 'https://example.com/video3',
+          duration: '50分钟',
+          exercises: 4
+        },
+        {
+          id: 4,
+          title: '函数与模块',
+          content: '学习函数的定义和使用，以及模块的导入和使用。',
+          video_url: 'https://example.com/video4',
+          duration: '55分钟',
+          exercises: 4
+        },
+        {
+          id: 5,
+          title: '文件操作与数据处理',
+          content: '学习如何读写文件，以及处理常见的数据格式。',
+          video_url: 'https://example.com/video5',
+          duration: '60分钟',
+          exercises: 5
+        },
+        {
+          id: 6,
+          title: '面向对象编程基础',
+          content: '学习类、对象、继承等面向对象编程概念。',
+          video_url: 'https://example.com/video6',
+          duration: '50分钟',
+          exercises: 3
+        },
+        {
+          id: 7,
+          title: '数据分析入门',
+          content: '介绍如何使用Python进行简单的数据分析。',
+          video_url: 'https://example.com/video7',
+          duration: '65分钟',
+          exercises: 4
+        },
+        {
+          id: 8,
+          title: '课程总结与项目实践',
+          content: '总结课程内容，完成一个综合性的数据分析项目。',
+          video_url: 'https://example.com/video8',
+          duration: '70分钟',
+          exercises: 1
+        }
+      ]);
+    }
   }, [id]);
 
   if (!course) {
@@ -134,7 +211,7 @@ const CourseDetail = () => {
                 </div>
               </div>
               <div className="flex space-x-4">
-                <Link to="/courses/1/lessons/1" className="bg-blue-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-700 transition-colors flex items-center space-x-2">
+                <Link to={`/courses/${course.id}/lessons/1`} className="bg-blue-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-700 transition-colors flex items-center space-x-2">
                   <Play className="h-5 w-5" />
                   <span>开始学习</span>
                 </Link>

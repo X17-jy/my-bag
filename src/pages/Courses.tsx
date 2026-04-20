@@ -11,6 +11,15 @@ const Courses = () => {
     setCourses([
       {
         id: 1,
+        title: 'Python数据分析AI训练平台',
+        description: '基于Cloudflare免费资源，实现3步认知+10个梯度项目+AI错题倒逼的Python数据分析实操训练',
+        category: '高级',
+        difficulty: '中级',
+        duration: '8周',
+        image_url: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Python%20data%20analysis%20AI%20training%20platform&image_size=landscape_16_9'
+      },
+      {
+        id: 2,
         title: 'Python基础编程',
         description: '掌握Python编程语言的基本语法和数据结构',
         category: '基础',
@@ -19,7 +28,7 @@ const Courses = () => {
         image_url: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Python%20programming%20basics%20course%20thumbnail&image_size=landscape_16_9'
       },
       {
-        id: 2,
+        id: 3,
         title: '数据分析与可视化',
         description: '使用Python进行数据清洗、分析和可视化',
         category: '进阶',
@@ -28,7 +37,7 @@ const Courses = () => {
         image_url: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Data%20analysis%20and%20visualization%20course&image_size=landscape_16_9'
       },
       {
-        id: 3,
+        id: 4,
         title: '商务数据分析实战',
         description: '应用Python解决实际商务数据分析问题',
         category: '高级',
@@ -37,7 +46,7 @@ const Courses = () => {
         image_url: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Business%20data%20analysis%20practical%20course&image_size=landscape_16_9'
       },
       {
-        id: 4,
+        id: 5,
         title: '数据可视化高级技巧',
         description: '掌握Matplotlib、Seaborn等库的高级可视化技巧',
         category: '进阶',
@@ -46,7 +55,7 @@ const Courses = () => {
         image_url: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Advanced%20data%20visualization%20techniques&image_size=landscape_16_9'
       },
       {
-        id: 5,
+        id: 6,
         title: '统计分析基础',
         description: '学习统计分析的基本概念和方法',
         category: '基础',
@@ -55,7 +64,7 @@ const Courses = () => {
         image_url: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Statistical%20analysis%20basics&image_size=landscape_16_9'
       },
       {
-        id: 6,
+        id: 7,
         title: '机器学习入门',
         description: '了解机器学习的基本原理和应用',
         category: '高级',
