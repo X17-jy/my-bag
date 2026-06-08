@@ -5,9 +5,10 @@ import { traeBadgePlugin } from 'vite-plugin-trae-solo-badge';
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/my-bag/', // GitHub Pages 部署路径
+  // GitHub Pages 会根据仓库名自动处理路径，先不设置 base
   build: {
     sourcemap: 'hidden',
+    outDir: 'dist',
   },
   plugins: [
     react({
