@@ -132,6 +132,48 @@ const Home = () => {
         </div>
       </section>
 
+      {/* About Developer */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 md:p-12 shadow-lg">
+              <h2 className="text-2xl font-bold mb-6 text-center text-gray-900">👋 关于我</h2>
+              <div className="bg-white rounded-xl p-6 md:p-8 shadow-md">
+                <div className="flex flex-col md:flex-row items-center gap-6">
+                  <div className="flex-shrink-0">
+                    <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center shadow-lg">
+                      <span className="text-5xl text-white font-bold">X</span>
+                    </div>
+                  </div>
+                  <div className="flex-grow text-center md:text-left">
+                    <h3 className="text-2xl font-bold mb-3 text-gray-900">xjy</h3>
+                    <div className="space-y-2 text-gray-600">
+                      <p className="flex items-center justify-center md:justify-start gap-2">
+                        <span className="inline-block w-2 h-2 bg-blue-500 rounded-full"></span>
+                        <span className="font-medium">广东科学技术职业学院</span>
+                      </p>
+                      <p className="flex items-center justify-center md:justify-start gap-2">
+                        <span className="inline-block w-2 h-2 bg-green-500 rounded-full"></span>
+                        <span className="font-medium">商学院</span>
+                      </p>
+                      <p className="flex items-center justify-center md:justify-start gap-2">
+                        <span className="inline-block w-2 h-2 bg-purple-500 rounded-full"></span>
+                        <span className="font-medium">商务数据分析与应用专业 · 学生</span>
+                      </p>
+                    </div>
+                    <div className="mt-6 pt-6 border-t border-gray-200">
+                      <p className="text-gray-700 italic leading-relaxed">
+                        "热爱数据分析与编程，致力于将数据转化为洞察。希望通过这个平台帮助更多同学掌握Python数据分析技能，一起探索数据的无限可能。"
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Pandas Projects */}
       <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-50">
         <div className="container mx-auto px-4">

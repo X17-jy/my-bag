@@ -165,6 +165,27 @@ const Profile = () => {
                   </div>
                 </div>
 
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">学校</label>
+                  <div className="p-3 border border-gray-200 rounded-lg bg-gray-50">
+                    广东科学技术职业学院
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">院系</label>
+                  <div className="p-3 border border-gray-200 rounded-lg bg-gray-50">
+                    商学院
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">专业</label>
+                  <div className="p-3 border border-gray-200 rounded-lg bg-gray-50">
+                    商务数据分析与应用
+                  </div>
+                </div>
+
                 {editing && (
                   <button
                     onClick={handleUpdate}
