@@ -3,9 +3,8 @@ import react from '@vitejs/plugin-react'
 import tsconfigPaths from "vite-tsconfig-paths";
 import { traeBadgePlugin } from 'vite-plugin-trae-solo-badge';
 
-// https://vite.dev/config/
 export default defineConfig({
-  // GitHub Pages 会根据仓库名自动处理路径，先不设置 base
+  base: '/my-bag/',
   build: {
     sourcemap: 'hidden',
     outDir: 'dist',
@@ -13,9 +12,7 @@ export default defineConfig({
   plugins: [
     react({
       babel: {
-        plugins: [
-          'react-dev-locator',
-        ],
+        plugins: ['react-dev-locator'],
       },
     }),
     traeBadgePlugin({
