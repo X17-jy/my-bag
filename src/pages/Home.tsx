@@ -99,33 +99,54 @@ const Home = () => {
             </div>
             <div className="md:w-1/2">
               <div className="bg-white p-6 rounded-lg shadow-lg">
-                <h3 className="text-blue-800 font-bold text-xl mb-4">平台特色</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-center space-x-3">
-                    <div className="bg-blue-100 p-2 rounded-full">
+                <h3 className="text-blue-800 font-bold text-xl mb-4">🛠️ 平台特色</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-3">
+                    <div className="bg-blue-100 p-2 rounded-lg flex-shrink-0">
                       <Book className="h-5 w-5 text-blue-600" />
                     </div>
-                    <span>完整的课程体系</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <div className="bg-blue-100 p-2 rounded-full">
-                      <Code className="h-5 w-5 text-blue-600" />
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-1">完整的课程体系</h4>
+                      <p className="text-sm text-gray-600">涵盖Python基础、数据分析、可视化、机器学习等核心技能</p>
                     </div>
-                    <span>互动式学习模块</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <div className="bg-blue-100 p-2 rounded-full">
-                      <FileText className="h-5 w-5 text-blue-600" />
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="bg-green-100 p-2 rounded-lg flex-shrink-0">
+                      <Code className="h-5 w-5 text-green-600" />
                     </div>
-                    <span>学、练习、测评一体化</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <div className="bg-blue-100 p-2 rounded-full">
-                      <Award className="h-5 w-5 text-blue-600" />
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-1">浏览器在线编程</h4>
+                      <p className="text-sm text-gray-600">无需安装任何软件，随时随地编写和运行Python代码</p>
                     </div>
-                    <span>成就激励系统</span>
-                  </li>
-                </ul>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="bg-purple-100 p-2 rounded-lg flex-shrink-0">
+                      <FileText className="h-5 w-5 text-purple-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-1">学-练-测一体化</h4>
+                      <p className="text-sm text-gray-600">理论学习 + 动手实践 + 在线测评，全方位巩固知识</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="bg-amber-100 p-2 rounded-lg flex-shrink-0">
+                      <Award className="h-5 w-5 text-amber-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-1">成就激励系统</h4>
+                      <p className="text-sm text-gray-600">徽章、证书、排行榜，激发学习动力</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="bg-red-100 p-2 rounded-lg flex-shrink-0">
+                      <TrendingUp className="h-5 w-5 text-red-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-1">实战项目驱动</h4>
+                      <p className="text-sm text-gray-600">10个精选Pandas实战项目，从入门到高级</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
