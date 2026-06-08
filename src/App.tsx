@@ -14,6 +14,8 @@ import Profile from './pages/Profile';
 import Admin from './pages/admin/Admin';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import PandasProjects from './pages/PandasProjects';
+import PandasProjectDetail from './pages/PandasProjectDetail';
 
 function App() {
   return (
@@ -35,6 +37,8 @@ function App() {
             <Route path="/auth/login" element={<Login />} />
             <Route path="/auth/register" element={<Register />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="/pandas-projects" element={<PandasProjects />} />
+            <Route path="/pandas-projects/:id" element={<PandasProjectDetail />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>

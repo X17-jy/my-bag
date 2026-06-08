@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
-import { Book, Code, FileText, Award, ChevronRight, BarChart2, Database, PieChart, LineChart } from 'lucide-react';
+import { Book, Code, FileText, Award, ChevronRight, BarChart2, Database, PieChart, LineChart, TrendingUp, CheckCircle, Clock } from 'lucide-react';
+import pandasProjects from '../data/pandasProjects';
 
 const Home = () => {
   const [user, setUser] = useState<any>(null);
@@ -127,6 +128,104 @@ const Home = () => {
                 </ul>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pandas Projects */}
+      <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center mb-4">
+              <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-3 rounded-xl">
+                <Database className="w-8 h-8 text-white" />
+              </div>
+            </div>
+            <h2 className="text-3xl font-bold mb-4">Pandas 数据分析实战</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              10个精选实战项目，从入门到进阶，完全在浏览器中运行代码，让你从零开始掌握数据分析核心技能
+            </p>
+            <div className="mt-6 flex items-center justify-center gap-6">
+              <div className="flex items-center gap-2 text-gray-600">
+                <Book className="w-5 h-5" />
+                <span>{pandasProjects.length}个项目</span>
+              </div>
+              <div className="flex items-center gap-2 text-gray-600">
+                <TrendingUp className="w-5 h-5" />
+                <span>从零到高级</span>
+              </div>
+              <div className="flex items-center gap-2 text-gray-600">
+                <CheckCircle className="w-5 h-5" />
+                <span>浏览器运行</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
+            {pandasProjects.slice(0, 6).map((project, index) => (
+              <Link
+                key={project.id}
+                to={`/pandas-projects/${project.id}`}
+                className="group bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+              >
+                <div className="relative h-40 bg-gradient-to-br from-blue-500 to-indigo-600">
+                  <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-blue-800">
+                    Project {index + 1}
+                  </div>
+                  <div className="absolute top-3 right-3 flex items-center gap-2">
+                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                      project.difficulty === '入门' ? 'bg-green-100 text-green-800' :
+                      project.difficulty === '进阶' ? 'bg-yellow-100 text-yellow-800' :
+                      'bg-red-100 text-red-800'
+                    }`}>
+                      {project.difficulty}
+                    </span>
+                  </div>
+                  <div className="absolute bottom-3 left-3 right-3 text-white">
+                    <div className="flex items-center gap-2">
+                      <Clock className="w-4 h-4" />
+                      <span className="text-sm opacity-90">{project.duration}</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="p-5">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-600 mb-3 text-sm line-clamp-2">
+                    {project.description}
+                  </p>
+                  
+                  <div className="flex flex-wrap gap-1 mb-3">
+                    {project.tags.slice(0, 3).map((tag, tagIndex) => (
+                      <span
+                        key={tagIndex}
+                        className="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded-full"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex items-center justify-between pt-3 border-t border-gray-100">
+                    <div className="text-xs text-gray-500">
+                      {project.objectives.length} 个学习目标
+                    </div>
+                    <div className="flex items-center text-blue-600 font-semibold text-sm group-hover:text-blue-700 transition-colors">
+                      开始学习
+                      <ChevronRight className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link to="/pandas-projects" className="inline-flex items-center bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-3 rounded-md font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all shadow-lg hover:shadow-xl">
+              查看全部实战项目 <ChevronRight className="ml-2 h-5 w-5" />
+            </Link>
           </div>
         </div>
       </section>

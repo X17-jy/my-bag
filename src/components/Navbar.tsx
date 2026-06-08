@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
-import { Menu, X, User, LogOut, Book, Code, FileText, Award, User as UserIcon } from 'lucide-react';
+import { Menu, X, User, LogOut, Book, Code, FileText, Award, User as UserIcon, Database } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,6 +43,10 @@ const Navbar = () => {
             <Link to="/courses" className="text-gray-700 hover:text-blue-600 transition-colors flex items-center space-x-1">
               <Book className="h-5 w-5" />
               <span>课程</span>
+            </Link>
+            <Link to="/pandas-projects" className="text-gray-700 hover:text-blue-600 transition-colors flex items-center space-x-1">
+              <Database className="h-5 w-5" />
+              <span>Pandas实战</span>
             </Link>
             <Link to="/practice" className="text-gray-700 hover:text-blue-600 transition-colors flex items-center space-x-1">
               <Code className="h-5 w-5" />
@@ -95,6 +99,7 @@ const Navbar = () => {
           <div className="md:hidden mt-4 pb-4">
             <div className="flex flex-col space-y-4">
               <Link to="/courses" className="text-gray-700 hover:text-blue-600 transition-colors py-2">课程</Link>
+              <Link to="/pandas-projects" className="text-gray-700 hover:text-blue-600 transition-colors py-2">Pandas实战</Link>
               <Link to="/practice" className="text-gray-700 hover:text-blue-600 transition-colors py-2">练习</Link>
               <Link to="/assessments" className="text-gray-700 hover:text-blue-600 transition-colors py-2">测评</Link>
               <Link to="/achievements" className="text-gray-700 hover:text-blue-600 transition-colors py-2">成就</Link>
